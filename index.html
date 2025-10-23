@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Single-File 3D Slideshow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #020b29;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .slideshow .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      transform: rotateY(270deg);
+      transform-style: preserve-3d;
+      animation: animate 40s linear infinite;
+      animation-delay: calc(var(--i) * 4s);
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotateY(270deg);
+      }
+
+      10%,
+      100% {
+        transform: rotateY(90deg);
+      }
+    }
+
+    .slideshow .slide img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transform: translateZ(0);
+    }
+
+    .slideshow .slide h2 {
+      position: relative;
+      z-index: 1000;
+      color: #000000;
+      font-size: 1.6rem;
+      transform: rotateY(180deg) translateY(100px) translateZ(50px);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      font-weight: 900;
+      padding: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      background: rgba(255,255,255,0.7);
+      border-radius: 8px;
+      margin: 18px;
+    }
+
+    .slideshow .slide h2 span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      font-size: 1.6rem;
+      font-weight: 300;
+      transform: translateZ(50px);
+      backface-visibility: hidden;
+    }
+
+    /* small responsive tweak */
+    @media (max-width:380px) {
+      .slideshow { width: 260px; height: 350px; }
+      .slideshow .slide h2 { font-size: 1.2rem; padding: 14px; }
+      .slideshow .slide h2 span { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow">
+    <div class="slide" style="--i:0;">
+      <h2>Xidan<span>Good_Boy</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/559530146_122182346930553963_7852621686192865555_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHNNHTR6xY3atNdYeqzYi95iVSyQyQTdkGJVLJDJBN2QVcToLoGihrq9gQ_T3JSEj_C8tvzSCE0fIiCAdMHExDV&_nc_ohc=r4PuYfHlyvsQ7kNvwHWgizc&_nc_oc=Adn8JdZptaYJaxBQHyVZ4Ld6S_FwYODGmZfVHMJEkTan_NW_ZO0ucQQlXrVRlj16nQY&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=AzDxjnM3AG11gU8nEIiyvw&oh=00_AfeSDlGrv9WADoMOdduLfvUL8s1K0SCCB1VSWc9s7iimgA&oe=69004BD6" alt="Trust in Allah. Don't give up, failure doesn't destroy us, because it makes us stronger.🏆💪" />
+    </div>
+
+    <div class="slide" style="--i:1;">
+      <h2>Khizir<span>Unknown_X</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/558254139_830058979368340_320371895919284276_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFMqxOgUDGFn6PCQ9qSMl1TpMM8czAQ2EOkwzxzMBDYQ0j4dIyWVvFOK8kwGaQARuvfHd2BvJtT0AXwcp2XSztM&_nc_ohc=Afv5qkHfdukQ7kNvwHEkGhi&_nc_oc=Adl15ejx8AUBP1rbCHYB4gokoa1XvEZSlGilfMcNWH30Z2vQubWTblZdhdVPtxuUcns&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=nNbvHhktyO-2_YS_3qSHog&oh=00_AfeLya7N5oXfzGkRq6ESWbxcLeMGiXwl_nL0qZfIG4uTyw&oe=69002DCD" alt=""ₗᵢᵥᵢₙg fₒᵣ dₑₗᵢcᵢₒᵤₛ bᵢₜₑₛ, ₗₐzy ₙᵢgₕₜₛ, ₐₙd dᵣₑₐₘᵢₙg ₒf ₒwₙᵢₙg ₐ fₒₒd ₑₘₚᵢᵣₑ."🍔🍕💭" />
+    </div>
+
+    <div class="slide" style="--i:2;">
+      <h2>Sadiq<span>Google</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/557464832_122226451292152580_5791687576805749116_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEj2JSpWB7_5Bze-_IDYHifdY-7TZ9MwGt1j7tNn0zAaxPFes7Q_vB6fwK8HKGanvooFtK1zR1zzefonpilydGS&_nc_ohc=UhkXKmcmwy4Q7kNvwFU-w7d&_nc_oc=AdkUvW8oV5Fy4dYJlvH6i7DdSNBIxpbbH-2OovNkWapQ-b5LRuF1mrmBcL5blxGUcUg&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=BvGmR1_Yep5KFuBff-1EKQ&oh=00_AfdN2V0WLiOX6VzVA_lWigUhL5Su0KOFmJ_XhKlSjvexyA&oe=69003358" alt="Wants to be a Shepherd, Is a Storyteller, Will Remain a Biology Enthusiast." />
+    </div>
+
+    <div class="slide" style="--i:3;">
+      <h2>Ruhan<span>GSCIAN</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/492447462_1226776362791610_5609746601138727300_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFBkDBgI8YVfSgwhANfVobhGZiUCxsPhHAZmJQLGw-EcCaJLL_p53aiMuYzJkeShzVLuCb6DeutWH6dyEZSPIB_&_nc_ohc=M9R28q4rYO0Q7kNvwEWwrkX&_nc_oc=AdnAHVzcfniT60KKoGnk7VOe4zVzS39WFno0YtZrS7GTAJe1WFqJ5dUObiQw96rbzO4&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=V7Dwt0K0GbSAiMwfmwbRGw&oh=00_AfcQ4OdshaDZxsvmZ_ez48ShNnHNu9V_R5CfsnAr9J1tfw&oe=69003683" alt="لا إله إلا الله محمد رسول الله
+
+GSCIAN" />
+    </div>
+
+    <div class="slide" style="--i:4;">
+      <h2>Minhaz<span>GRFX_DSGNR</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/567682828_1213482130605149_8429967638898075794_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG3SNlsdr3bYU1Z3Zw3eS8y3JG6mPDIby3ckbqY8MhvLQLZxcF90V4BVBFjCfrgHnARRdAhBZM1QZoaoOT5jbFN&_nc_ohc=pswdVRW5KQ8Q7kNvwGdZiy7&_nc_oc=Adm713eK860GUka14AxnnAakw9XhdmtSsTXevRbQobiSB0Q6FpCsLsPVkKgOaycgRRQ&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=bD7bB8EMWCQW6jN1td2Ieg&oh=00_AfdGpWPLo6zddkBxQr-BMJr5gy0xHumdNLy8uiZz02GNdg&oe=69005844" alt="ʏᴀ ᴅᴇᴠʟᴇᴛɪ ʏÖɴᴇᴛᴇᴄᴇĞɪᴍ 🔪🔥, ʏᴀ ᴅᴀ ŞᴇʜɪᴛʟɪĞɪ ᴋᴀʙᴜʟ ᴇᴅᴇᴄᴇĞɪᴍ🎀✨." />
+    </div>
+
+    <div class="slide" style="--i:5;">
+      <h2>Bayzid<span>ALDCIAN</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/472607668_122185995038066648_7880149090918764698_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEdBWLrpXv4tTUN-0_y0_foXLqm35K7Gh9cuqbfkrsaH1ne65x-46oAFpHsX1Zcu4lpCXgpaDN7xnZlsfIplmyT&_nc_ohc=TjZM75LRJbYQ7kNvwGPa8AU&_nc_oc=AdmzKQ2teNdNjxryM7BEEshR5ole12egEtt-Y7YGdLKSIP8BGIS5YfhoO91POJAatuU&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=_vYk2fkoe52kYxQLLmGF3Q&oh=00_AfcXRX6Bi4FCR-0qdQo7oD_yK6lEGpRb1JbCRPruPLNIUA&oe=69005BBA" alt="উহারা চাহুক দাসের জীবন, আমরা শহীদি দরজা চাই;
+নিত্য মৃত্যু-ভীত ওরা, মোরা মৃত্যু কোথায় খুঁজে বেড়াই!" />
+    </div>
+
+    <div class="slide" style="--i:6;">
+      <h2>Sakib<span>Tourist</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/474066742_542740578226085_1019355805399275175_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEc-uUhpbjVAPKoUpizOtMrmqVupqWwhHqapW6mpbCEevtSy1tFLvkbovxSmRSBH7aRy7KnQP7lIeKv6RGw4p57&_nc_ohc=Su6N4sKKTfsQ7kNvwHJIspH&_nc_oc=Adn0VD0B8FEjFVhjpWa63NhG5a2Fv7aWkPMCA8NnF9Nq0fjCyePaY1u5PKc86FzRuAY&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=1tHDYCYSigfrk4L7fumgig&oh=00_AfdGUFdXn2Oh5HqRUVXltYPtldrzoimL6xu9b8EIiV1QFQ&oe=69004122" alt="রাত হোক অথবা দিন ট্রাভেল আমার নিকোটিন🍁
+RAFTAAR🇸🇦🇧🇩" />
+    </div>
+
+    <div class="slide" style="--i:7;">
+      <h2>Naim<span>Married_Boy</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/483961783_619180207758985_7607704597296539881_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHVGetuQIA15OlolLTq9smyp0gYkb62r0OnSBiRvravQ81L9k2IdiT6LCvLpNAfmHBIXHaQS8fNTCKLmr_h-BZF&_nc_ohc=Eg8Ek749J6cQ7kNvwGA6bi1&_nc_oc=Admn_lXvIGvwQX0K3f4r5rVw1uou_LA7IJxFz8GIYQVmsjFPAZ2EdSZ0MkgDk1nIzHk&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=vOqCvIX1T2yMEjMrp8xKeA&oh=00_AfdRNwZO_C6Eaqf_NUX54h8WUHZQV-DZl7O-0_6d_4_qWQ&oe=6900476C" alt=""الصِّدقُ يُنْجِي، والكَذِبُ يُهْلِك"" />
+    </div>
+
+    <div class="slide" style="--i:8;">
+      <h2>Khizir<span>Unknown_X</span></h2>
+      <img src="https://pbs.twimg.com/media/G3-OuBtXMAAbLXt?format=jpg&name=large" alt=""ₗᵢᵥᵢₙg fₒᵣ dₑₗᵢcᵢₒᵤₛ bᵢₜₑₛ, ₗₐzy ₙᵢgₕₜₛ, ₐₙd dᵣₑₐₘᵢₙg ₒf ₒwₙᵢₙg ₐ fₒₒd ₑₘₚᵢᵣₑ."🍔🍕💭" />
+    </div>
+
+    <div class="slide" style="--i:9;">
+      <h2>Rumman<span>Biker_</span></h2>
+      <img src="https://scontent.fdac139-1.fna.fbcdn.net/v/t39.30808-6/528995334_1143013051001932_4932545033225971010_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHzXnPFduDv0z_28pqpmX6WLKsDKbr5nr0sqwMpuvmevZT1LIiYCk62A9E38ttSPfiGFLyY35vt7w6eUJdJ_FRb&_nc_ohc=NgKT6ggbkgEQ7kNvwEfI1We&_nc_oc=AdnrW5Yi_UQ_jqNFd5xgXYE4Ubmos_xd5fZOFn7mXdbX1S5CJqxzF951Z-39CKNiRzI&_nc_zt=23&_nc_ht=scontent.fdac139-1.fna&_nc_gid=SC28RvO3sfH7-jyJ5NY32g&oh=00_Afc_MZHdYKSNVnRSg1INhn2HGjtovHSf7YmIiFt5sxBZ5Q&oe=69006016" alt="Silence is the best way to Salvation on planet earth." />
+    </div>
+
+  </div>
+</body>
+</html>
